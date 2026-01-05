@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Applications in Intelligent Systems - FLICS 2026</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    
+    header {
+       background: #1e3a8a;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center; 
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+    nav {
+      background: #2563eb;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 960px;
+      margin: auto;
+      background: white;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h2 {
+      color: #1e3a8a;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      background: #e5e7eb;
+    }
+
+    .timeline-panel {
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+      flex-wrap: nowrap;
+      background: #f0f9ff;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    }
+    .timeline-panel > div {
+      background: white;
+      flex: 1;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+    .timeline-panel p {
+      margin: 0.5rem 0 0;
+    }
+
+  .submission-guidelines {
+  background: #eff6ff;              /* light blue background */
+  border-left: 5px solid #2563eb;   /* primary blue accent */
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.submission-guidelines h4 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+/* =========================
+   RESPONSIVE FIXES
+   ========================= */
+
+/* Tablets & small laptops */
+@media (max-width: 992px) {
+
+  section {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  header {
+    padding: 2.5rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2.1rem;
+  }
+
+}
+
+/* Tablets & large phones */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 0.75rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.4rem 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+  }
+
+  header p {
+    font-size: 1.05rem;
+  }
+
+  .timeline-panel {
+    flex-wrap: wrap;       /* dates stack nicely */
+  }
+
+  .timeline-panel > div {
+    min-width: 220px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+
+  header {
+    padding: 2rem 1.25rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 1.5rem 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin: 0.3rem 0.4rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Workshop abbreviation badge */
+.workshop-badge {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.6rem 1.6rem;
+  background: rgba(233, 236, 238, 0.941);
+  color: #384bf8ed;              
+  border-radius: 1000px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: fadeSlideDown 1s ease-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Subtle academic animation */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="workshop-badge">
+  BAICS 2026
+</div> <br><br>
+
+<div style="
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 1.4rem;
+  background: rgba(255, 255, 255, 0.85);  /* high contrast */
+  color: #1e3a8a;                        /* deep blue text */
+  border-radius: 999px;
+  font-size: 1rem;                       /* bigger font */
+  font-weight: 700;
+  letter-spacing: 0.06em;
+">
+  2026 International Workshop on
+</div>
+
+    <!-- <div style="
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.4rem 1rem;
+    background: rgba(255,255,255,0.15);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  ">
+    The 1st International Workshop on
+   </div> -->
+    <h1>Blockchain Applications in Intelligent Computing Systems</h1>
+    <p>Co-located with <a href="https://flics-conference.org" target="_blank" style="color: #93c5fd; text-decoration: underline;">FLiCS 2026</a> · Valencia, Spain · June 9–12, 2026</p>
+  </header>
+
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#topics">Topics</a>
+    <a href="#dates">Important Dates</a>
+    <a href="#submission">Submission</a>
+    <a href="#program">Program</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="overview">
+  <h2>Scope and Objectives of the Workshop</h2>
+  <p>
+    This workshop aims to provide a focused interdisciplinary forum for researchers, practitioners, and industry stakeholders to explore how blockchain technologies and smart contracts can be effectively integrated with intelligent systems to enhance transparency, traceability, security, and trust in complex digital and cyber-physical environments. The primary objective is to examine blockchain not merely as a distributed ledger, but as a foundational trust layer that supports automated decision-making, secure data sharing, and verifiable provenance in AI-driven and data-intensive systems.
+  </p>
+  <p>
+    By bringing together advances in smart contracts, NFTs, decentralized architectures, and intelligent algorithms, the workshop seeks to address fundamental challenges such as secure automation, accountability, anti-counterfeiting, privacy preservation, and system interoperability across heterogeneous domains.
+  </p>
+  <p>
+    The workshop further aims to foster discussion on practical deployments, architectural trade-offs, and emerging research directions at the intersection of blockchain and intelligent systems. Particular emphasis is placed on applications involving supply-chain traceability, digital asset management, IoT and edge intelligence, decentralized and federated learning, and governance-aware intelligent services, where trust, auditability, and resilience are critical requirements. Through technical contributions, case studies, and vision papers, the workshop intends to stimulate collaboration between academia and industry, identify open challenges related to scalability, performance, and sustainability, and outline future pathways for designing secure, transparent, and intelligent decentralized systems.
+  </p>
+</section>
+
+  <section id="topics">
+  <h2>Topics of Interest</h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+    <div style="background: #e0f2fe; padding: 1rem; border-left: 6px solid #0ea5e9; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3> <h3>🔗 1. Blockchain Foundations for Intelligent Systems</h3>
+      <p><strong>Keywords:</strong> Blockchain architectures, decentralized systems, trust, transparency</p>
+      <ul>
+        <li>Blockchain-enabled intelligent and autonomous systems</li>
+        <li>Permissioned vs. permissionless blockchains for AI-driven applications</li>
+        <li>Blockchain interoperability for intelligent ecosystems</li>
+        <li>Consensus mechanisms optimized for intelligent and data-driven systems</li>
+        <li>Blockchain as a trust layer for intelligent decision-making</li>
+      </ul>
+    </div>
+
+    <div style="background: #fef9c3; padding: 1rem; border-left: 6px solid #eab308; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3>📄 2. Smart Contracts and Automated Trust</h3>
+      <p><strong>Keywords:</strong> Smart contracts, automation, security, verification</p>
+      <ul>
+        <li>Smart contract design for intelligent applications</li>
+        <li>Formal verification and security analysis of smart contracts</li>
+        <li>AI-assisted smart contract generation and auditing</li>
+        <li>Smart contracts for automated compliance and governance</li>
+        <li>Runtime monitoring and anomaly detection in smart contracts</li>
+      </ul>
+    </div>
+
+    <div style="background: #ede9fe; padding: 1rem; border-left: 6px solid #8b5cf6; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3>🪙 3. NFTs and Digital Asset Intelligence</h3>
+      <p><strong>Keywords:</strong> NFTs, tokenization, digital identity, provenance</p>
+      <ul>
+        <li>NFTs for digital identity, ownership, and authentication</li>
+        <li>Intelligent NFT systems for dynamic and programmable assets</li>
+        <li>NFTs for product provenance and anti-counterfeiting</li>
+        <li>Secure NFT marketplaces and fraud detection</li>
+        <li>NFTs combined with AI for adaptive rights management</li>
+      </ul>
+    </div>
+
+    
+
+    <div style="background: #fee2e2; padding: 1rem; border-left: 6px solid #ef4444; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3>🛡️ 4. Security, Privacy, and Trust in Decentralized Systems</h3>
+      <p><strong>Keywords:</strong> Security, privacy, trust, cryptography</p>
+      <ul>
+        <li>Cryptographic primitives for secure and trustworthy systems</li>
+        <li>Privacy-preserving techniques (ZKPs, MPC, homomorphic encryption)</li>
+        <li>Secure identity management and authentication mechanisms</li>
+        <li>Attack detection and mitigation in blockchain networks</li>
+        <li>Threat modeling and risk assessment for decentralized systems</li>
+      </ul>
+    </div>
+
+    <div style="background: #f0f9ff; padding: 1rem; border-left: 6px solid #0ea5e9; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3>🧠 5. Blockchain and Artificial Intelligence Integration</h3>
+      <p><strong>Keywords:</strong> Intelligent systems, AI, machine learning, decentralization</p>
+      <ul>
+        <li>Decentralized and federated learning over blockchain</li>
+        <li>Trusted data sharing for AI using blockchain</li>
+        <li>Explainable AI and accountability via immutable ledgers</li>
+        <li>AI-driven analytics for blockchain data</li>
+        <li>Incentive mechanisms for collaborative intelligence</li>
+      </ul>
+    </div>
+
+    <div style="background: #fff7ed; padding: 1rem; border-left: 6px solid #fb923c; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3>📡 6. IoT, Cyber-Physical, and Intelligent Edge Systems</h3>
+      <p><strong>Keywords:</strong> IoT, edge intelligence, cyber-physical systems</p>
+      <ul>
+        <li>Blockchain for secure IoT and sensor networks</li>
+        <li>Smart, wearable, Ubiquirous and Predictable Healthcare</li>
+        <li>Energy-efficient and Battery-aware IoT-5G/6G driven wearable edge devices for smart healthcare</li>
+        <li>5G/6G PHY Layer Authentication for Edge Devices</li>
+        <li>Integration of 5G/6G edge devices for real-time, decentralized intelligence</li>
+        <li>Edge AI with blockchain-based coordination</li>
+        <li>Secure data collection and validation from physical devices</li>
+        <li>Trust management in large-scale IoT ecosystems</li>
+        <li>Blockchain-enabled cyber-physical security</li>
+      </ul>
+    </div>
+
+    <div style="background: #e0f2fe; padding: 1rem; border-left: 6px solid #3b82f6; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3>⚖️ 7. Governance, Compliance, and Ethical Intelligence</h3>
+      <p><strong>Keywords:</strong> Governance, regulation, ethics, compliance</p>
+      <ul>
+        <li>Regulatory compliance through Smart Contracts</li>
+        <li>Transparent governance models using Blockchain</li>
+        <li>Ethical challenges in intelligent and autonomous systems</li>
+        <li>Auditable AI systems using immutable records</li>
+        <li>Policy-aware intelligent systems</li>
+      </ul>
+    </div>
+
+    <div style="background: #fefce8; padding: 1rem; border-left: 6px solid #facc15; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+      <h3> 📈8. Performance, Scalability, and Sustainability</h3>
+      <p><strong>Keywords:</strong> Scalability, performance, energy efficiency</p>
+      <ul>
+        <li>Scalable blockchain solutions for intelligent workloads</li>
+        <li>Energy-efficient consensus and green blockchain</li>
+        <li>Performance evaluation of blockchain-based intelligent systems</li>
+        <li>Layer-2 solutions and off-chain computation</li>
+        <li>Sustainable architectures for AI–blockchain integration</li>
+      </ul>
+    </div>
+
+    <div style="background: #ecfccb; padding: 1rem; border-left: 6px solid #65a30d; border-radius: 8px; flex: 1 1 calc(33% - 1.5rem); min-width: 280px; box-sizing: border-box;">
+  <h3> 🏭 9. Applications and Case Studies</h3>
+  <p><strong>Keywords:</strong> Real-world deployment, industry use cases</p>
+  <ul>
+    <li>Intelligent tracking and monitoring of goods and assets</li>
+    <li>Provenance verification using blockchain and AI</li>
+    <li>Anti-counterfeiting technologies for luxury and industrial products</li>
+    <li>Sustainable and ethical supply chains enabled by blockchain</li>
+        <li>Blockchain and AI for healthcare, finance, and smart cities</li>
+        <li>Intelligent transportation and logistics systems</li>
+        <li>Digital twins and blockchain-based traceability</li>
+        <li>Industrial case studies and pilot deployments</li>
+        <li>Lessons learned from real-world implementations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      
+<section id="dates">
+  <h2>Important Dates</h2>
+  <div style="background: #f0f9ff; border-left: 4px solid #38bdf8; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+    <strong>Note:</strong> All dates are synchronized with FLICS 2026. Please check the main conference website for the latest information.
+  </div>
+  <div class="timeline-panel">
+    <div>
+      <div style="font-size: 1.8rem;">✉️</div>
+      <p style="font-weight: 600;">Submission Deadline</p>
+      <p style="color: #2563eb; font-weight: bold;">28-April-2026</p>
+    </div>
+    <div>
+      <div style="font-size: 1.8rem;">🔔</div>
+      <p style="font-weight: 600;">Acceptance Notification</p>
+      <p style="color: #2563eb; font-weight: bold;">5-May-2026</p>
+    </div>
+    <div>
+      <div style="font-size: 1.8rem;">🖋️</div>
+      <p style="font-weight: 600;">Camera-Ready & Registration</p>
+      <p style="color: #2563eb; font-weight: bold;">15-May-2026</p>
+    </div>
+    <div>
+      <div style="font-size: 1.8rem;">📅</div>
+      <p style="font-weight: 600;">Workshop Dates</p>
+      <p style="color: #2563eb; font-weight: bold;">9–12-June-2026</p>
+    </div>
+  </div>
+</section>
+<!-- <section id="dates">
+  <h2>Important Dates</h2>
+  <div class="timeline-panel">
+    <div>
+      📄<br><strong>Paper Submission Deadline</strong>
+      <p>28 April 2026</p>
+    </div>
+    <div>
+      ✅<br><strong>Notification of Acceptance</strong>
+      <p>5 May 2026</p>
+    </div>
+    <div>
+      🖊️<br><strong>Camera-Ready Submission</strong>
+      <p>15 May 2026</p>
+    </div>
+    <div>
+      📅<br><strong>Workshop Dates</strong>
+      <p>9–12 June 2026</p>
+    </div>
+  </div> -->
+
+
+<section id="submission">
+  <h2>Submission</h2>
+  <p>Submit your paper via EasyChair:</p>
+  <a class="button" href="https://easychair.org/my2/conference?conf=flics2026" target="_blank">📄 Submit Your Paper</a>
+  <p style="margin-top: 1rem;">
+    Submissions should be 6–12 pages in Springer LNCS format. All accepted papers will appear in post-conference proceedings with potential journal invitations (e.g., Expert Systems, Cluster Computing).
+  </p>
+
+   <div class="highlight-box">
+          <p class="mb-2">
+            <h3><strong>Format Requirements:</h3></strong> All submissions must follow the <strong>FLICS 2026 submission guidelines</strong> and use the conference template. Please consult the main conference website for detailed formatting instructions. Remember to <strong>add keywords</strong> to your submission.
+          </p>
+    </div>
+
+  <div class="submission-guidelines">
+  <h4>Submission Guidelines</h4>
+  <ul>
+    <li><strong>Regular Research Papers</strong> (7–8 Pages): Mature research contributions with substantial original work, complete evaluations, and clear contributions to the field.</li>
+    <li><strong>Short / Position Papers</strong> (4–6 Pages): Work-in-progress, preliminary results, vision papers, or position statements on emerging challenges and opportunities.</li>
+    <li><strong>Poster Papers</strong> (1–2 Pages): Undergraduate student contributions, early-stage ideas, prototypes, or course/research projects. Great for getting started!</li>
+  </ul>
+</div>
+
+
+  <!-- <h4>Submission Guidelines</h4>
+  <ul>
+    <li><strong>Regular Research Papers</strong> (7–8 Pages): Mature research contributions with substantial original work, complete evaluations, and clear contributions to the field.</li>
+    <li><strong> Short / Position Papers</strong> (4–6 Pages): Work-in-progress, preliminary results, vision papers, or position statements on emerging challenges and opportunities.</li>
+    <li><strong> Poster Papers</strong> (1–2 Pages): Undergraduate student contributions, early-stage ideas, prototypes, or course/research projects. Great for getting started!</li>
+  </ul> -->
+</section>
+  
+
+  <section id="program">
+    <h2>Program</h2>
+    <p>To Be Determined.</p>
+  </section>
+
+  <section id="organizers">
+  <h2>Organizers</h2>
+  <div style="display: flex; justify-content: space-around; gap: 2rem; flex-wrap: wrap; text-align: center;">
+    <div>
+      <img src="assets/fiza-photo.jpg" alt="Fiza Siyal" style="width: 120px; height: 140px; border-radius: 50%; object-fit: cover; background: #ddd;" />
+      <p><strong>Fiza Siyal</strong><br>University of Calabria, Italy</p>
+    </div>
+    <div>
+      <img src="assets/nawaz-photo.jpeg" alt="Nawaz Ali" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: #ddd;" />
+      <p><strong>Nawaz Ali</strong><br>University of Calabria, Italy</p>
+    </div> 
+    <div>
+      <img src="assets/ali-photo.jpg" alt="Ali Hassan Sodhro" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: #ddd;" />
+      <p><strong>Ali Hassan Sodhro</strong><br>Kristianstad University, Sweden</p>
+    </div>
+    <div>
+      <img src="assets/das-photo.jpg" alt="Bhagwan Das" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: #ddd;" />
+      <p><strong>Bhagwan Das</strong><br>Torrens University, Australia</p>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="contact">
+  <h2>Contact</h2>
+  <p>
+    <strong>Fiza Siyal</strong> – <a href="mailto:fiza.syial@dimes.unical.it">fiza.syial@dimes.unical.it</a> &nbsp;|&nbsp;
+    <strong>Nawaz Ali</strong> – <a href="mailto:nawaz.ali@dimes.unical.it">nawaz.ali@dimes.unical.it</a> &nbsp;|&nbsp;
+    <strong>Ali Hassan Sodhro</strong> – <a href="mailto:ali.hassan_sodhro@hkr.se">ali.hassan_sodhro@hkr.se</a>
+    <strong>Bhagwan Das</strong> – <a href="mailto:bhagwan.das@torrens.edu.au">bhagwan.das@torrens.edu.au</a>
+  </p>
+</section> -->
+
+  <section id="contact">
+    <h2>Contact</h2>
+    
+    <p><strong>Fiza Siyal</strong><br><a href="mailto:fiza.syial@dimes.unical.it">fiza.syial@dimes.unical.it</a></p>
+    <p><strong>Nawaz Ali</strong><br><a href="mailto:nawaz.ali@dimes.unical.it">nawaz.ali@dimes.unical.it</a> </p>
+    <p><strong>Ali Hassan Sodhro</strong><br><a href="mailto:ali.hassan_sodhro@hkr.se">ali.hassan_sodhro@hkr.se</a></p>
+    <p><strong>Bhagwan Das</strong><br><a href="mailto:bhagwan.das@torrens.edu.au">bhagwan.das@torrens.edu.au</a></p>
+    
+  </section>
+
+  <footer>
+    &copy; 2026 Blockchain Applications in Intelligent Computing Systems. Part of FLICS 2026 – Valencia, Spain.
+  </footer>
+</body>
+</html>
